@@ -5,8 +5,7 @@ var translate = function(input) {
   var inputControl = 0;
   for(index = 0; index <= 4; index++){
     console.log(index);
-    if(input===vowels[index]){
-      alert("test");
+    if(input[0]===vowels[index]){
       inputControl = 1;
       return input.concat("ay");
     };
