@@ -1,28 +1,44 @@
 //business logic
 var userInput = 0;
 var vowels = ["a", "e", "i", "o", "u"];
+var vowelsVal = [];
+var vvArray = [];
+
+var vowelChecker = function(input) {
+  inputArray = input.split("");
+  for (inputIndex = 0; inputIndex < userInput.length; inputIndex++){
+    vowels.forEach(function(vowel) {
+      if (inputArray[inputIndex] === vowel) {
+        vowelsVal.push(1);
+      }
+    })
+    if(!vowelsVal[inputIndex]){
+      vowelsVal.push(0);
+    };
+  };
+  return vowelsVal;
+};
+
 
 var translate = function(input) {
   var piglatin = 0;
   if (parseFloat(input)) {
     return input;
   } else {
-    for(index = 0; index <= 4; index++){
-      console.log(index);
-      if(input[0]===vowels[index]){
-        piglatin = input.concat("ay");
-        return piglatin;
-        break;
+      vvArray = vowelChecker(input);
+      if (!vvArray[0]){
+        consonant = input.substring(0,1);
+        rest = input.substring(1,input.length);
+        return rest + consonant + "ay";
       }
-    }
-    if(!piglatin){
-
-      consonant = input.substring(0,1);
-      rest = input.substring(1,input.length);
-      return rest + consonant + "ay";
-    }
   }
 }
+    // if(!piglatin){
+    //
+    //   consonant = input.substring(0,1);
+    //   rest = input.substring(1,input.length);
+    //   return rest + consonant + "ay";
+    // }
 
 
 
@@ -38,38 +54,3 @@ $(document).ready(function() {
 
 
 // testing
-var vowelsVal = [];
-var translate = function(input) {
-  inputArray = input.split("");
-  for (inputIndex = 0; inputIndex < userInput.length; inputIndex++){
-    vowels.forEach(function(vowel) {
-      if (inputArray[inputIndex] === vowel) {
-        vowelsVal.push(1);
-      }
-    })
-    if(!vowelsVal[inputIndex]){
-      vowelsVal.push(0);
-    };
-  };
-  console.log(vowelsVal);
-};
-
-// var vowelsVal = [];
-//
-// var vowelChecker = function(inputIndex) {
-//   for (inputIndex = 0; inputIndex > userInput.length; inputIndex++) {
-//     if (inputIndex !== vowel) {
-//       return 1;
-//     } else {
-//       return 0;
-//     };
-//   };
-// };
-//
-// var translate = function(input) {
-//   inputArray = input.split("");
-//   inputArray.forEach(function(index) {
-//     vowelCheckerResult = vowelChecker();
-//     console.log(vowelCheckerResult);
-//   });
-// };
