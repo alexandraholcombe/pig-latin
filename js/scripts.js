@@ -33,7 +33,9 @@ var translate = function(input) {
   vvArray = vowelChecker(input);
   if (parseFloat(input)) {
     return input;
-  } else if(!(vvArray[0]) && !(vvArray[1]) && !(vvArray[2]) && !(vvArray[3])) {
+  } else if(input.charAt(0).toLowerCase()==="q" && input.charAt(1).toLowerCase()==="u"){
+    return concatAy(input, 2);
+  }else if(!(vvArray[0]) && !(vvArray[1]) && !(vvArray[2]) && !(vvArray[3])) {
     return concatAy(input, 4);
   } else if(!(vvArray[0]) && !(vvArray[1]) && !(vvArray[2])) {
     return concatAy(input, 3);
