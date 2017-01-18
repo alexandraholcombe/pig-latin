@@ -3,7 +3,7 @@ var userInput = 0;
 var vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
 var vowelsVal = [];
 var vvArray = [];
-
+var piglatinword = [];
 
 var concatAy = function(input, index) {
   consonant = input.substring(0,index);
@@ -28,7 +28,7 @@ var vowelChecker = function(input) {
 };
 
 
-var translate = function(input) {
+var wordtranslator = function(input) {
   var piglatin = 0;
   vvArray = vowelChecker(input);
   if (parseFloat(input)) {
@@ -46,9 +46,19 @@ var translate = function(input) {
   }else{
     return input + "ay";
   }
-
 }
 
+var translate = function(input) {
+  piglatinword = [];
+  words = input.split(" ");
+  console.log(words);
+  words.forEach(function(word){
+    var translateWord = wordtranslator(word)
+    piglatinword = piglatinword.concat([translateWord]);
+
+  })
+  return piglatinword.join(" ");
+}
 
 //user interface logic
 $(document).ready(function() {
