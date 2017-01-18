@@ -8,9 +8,6 @@
 
 A webpage to translate user input into pig latin:
 
-**The program does nothing to non-alphabetical characters, since they do not contain consonants or vowels.**
-* Input Example: 4
-* Output Example: 4
 
 **The program should add ay to a single letter word beginning with a vowel.**
 * Input Example: i
@@ -51,6 +48,10 @@ A webpage to translate user input into pig latin:
 **For sentences containing multiple words, each word will follow the preceding rules separately.**
 * Input Example: I like dogs
 * Output Example: Iay ikelay ogsday
+
+**The program does nothing to non-alphabetical characters, since they do not contain consonants or vowels.**
+* Input Example: 4
+* Output Example: 4
 
 **For sentences containing punctuation, the punctuation should appear at the end of the modified word.**
 * Input Example: I love you, you love me!

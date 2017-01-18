@@ -1,17 +1,21 @@
 //business logic
 var userInput = 0;
 var vowels = ["a", "e", "i", "o", "u"];
+
 var translate = function(input) {
-  var inputControl = 0;
+  var piglatin = 0;
   for(index = 0; index <= 4; index++){
     console.log(index);
     if(input[0]===vowels[index]){
-      inputControl = 1;
-      return input.concat("ay");
-    };
+      piglatin = input.concat("ay");
+      return piglatin;
+      break;
+    }
   }
-  if (!inputControl){
-    return input;
+  if(!piglatin){
+    consonant = input.substring(0,1);
+    rest = input.substring(1,input.length);
+    return rest + consonant + "ay";
   }
 }
 
