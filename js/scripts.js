@@ -1,6 +1,6 @@
 //business logic
 var userInput = 0;
-var vowels = ["a", "e", "i", "o", "u"];
+var vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
 var vowelsVal = [];
 var vvArray = [];
 
