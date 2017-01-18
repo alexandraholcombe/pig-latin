@@ -35,6 +35,8 @@ var wordtranslator = function(input) {
     return input;
   } else if(input.charAt(0).toLowerCase()==="q" && input.charAt(1).toLowerCase()==="u"){
     return concatAy(input, 2);
+  }else if(!(vvArray[0]) && input.charAt(1).toLowerCase()==="q" && input.charAt(2).toLowerCase()==="u"){
+    return concatAy(input, 3);
   }else if(!(vvArray[0]) && !(vvArray[1]) && !(vvArray[2]) && !(vvArray[3])) {
     return concatAy(input, 4);
   } else if(!(vvArray[0]) && !(vvArray[1]) && !(vvArray[2])) {
