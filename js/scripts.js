@@ -4,18 +4,22 @@ var vowels = ["a", "e", "i", "o", "u"];
 
 var translate = function(input) {
   var piglatin = 0;
-  for(index = 0; index <= 4; index++){
-    console.log(index);
-    if(input[0]===vowels[index]){
-      piglatin = input.concat("ay");
-      return piglatin;
-      break;
+  if (parseFloat(input)) {
+    return input;
+  } else {
+    for(index = 0; index <= 4; index++){
+      console.log(index);
+      if(input[0]===vowels[index]){
+        piglatin = input.concat("ay");
+        return piglatin;
+        break;
+      }
     }
-  }
-  if(!piglatin){
-    consonant = input.substring(0,1);
-    rest = input.substring(1,input.length);
-    return rest + consonant + "ay";
+    if(!piglatin){
+      consonant = input.substring(0,1);
+      rest = input.substring(1,input.length);
+      return rest + consonant + "ay";
+    }
   }
 }
 
