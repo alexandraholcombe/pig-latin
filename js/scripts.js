@@ -16,12 +16,14 @@ var translate = function(input) {
       }
     }
     if(!piglatin){
+
       consonant = input.substring(0,1);
       rest = input.substring(1,input.length);
       return rest + consonant + "ay";
     }
   }
 }
+
 
 
 //user interface logic
@@ -33,3 +35,41 @@ $(document).ready(function() {
     $("#result").text(result);
   });
 });
+
+
+// testing
+var vowelsVal = [];
+var translate = function(input) {
+  inputArray = input.split("");
+  for (inputIndex = 0; inputIndex < userInput.length; inputIndex++){
+    vowels.forEach(function(vowel) {
+      if (inputArray[inputIndex] === vowel) {
+        vowelsVal.push(1);
+      }
+    })
+    if(!vowelsVal[inputIndex]){
+      vowelsVal.push(0);
+    };
+  };
+  console.log(vowelsVal);
+};
+
+// var vowelsVal = [];
+//
+// var vowelChecker = function(inputIndex) {
+//   for (inputIndex = 0; inputIndex > userInput.length; inputIndex++) {
+//     if (inputIndex !== vowel) {
+//       return 1;
+//     } else {
+//       return 0;
+//     };
+//   };
+// };
+//
+// var translate = function(input) {
+//   inputArray = input.split("");
+//   inputArray.forEach(function(index) {
+//     vowelCheckerResult = vowelChecker();
+//     console.log(vowelCheckerResult);
+//   });
+// };
