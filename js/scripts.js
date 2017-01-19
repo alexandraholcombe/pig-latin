@@ -31,7 +31,7 @@ var vowelChecker = function(input) {
 var wordtranslator = function(input) {
   var piglatin = 0;
   vvArray = vowelChecker(input);
-  if (parseFloat(input)) {
+  if (/[^\w\s]/g.test(input)||/[\d]/g.test(input)) {
     return input;
   } else if(input.charAt(0).toLowerCase()==="q" && input.charAt(1).toLowerCase()==="u"){
     return concatAy(input, 2);
